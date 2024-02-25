@@ -1,0 +1,30 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+
+interface Props {
+  users: {
+    name: string;
+    username: string;
+    email: string;
+    address: string;
+    phone: string;
+  }[];
+}
+
+const UsersListComponent: React.FC<Props> = ({ users }) => {
+  return (
+    <View>
+      {users.map((user, index) => (
+        <View key={index}>
+          <Text>Name: {user.name}</Text>
+          <Text>Username: {user.username}</Text>
+          <Text>Email: {user.email}</Text>
+          <Text>Address: {user.address}</Text>
+          <Text>Phone: {user.phone}</Text>
+        </View>
+      ))}
+    </View>
+  );
+};
+
+export default UsersListComponent;
